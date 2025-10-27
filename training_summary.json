@@ -1,0 +1,47 @@
+{
+  "training_info": {
+    "date": "2025-10-25 19:17:37",
+    "gpu_setup": "Kaggle T4 x2 (30GB VRAM)",
+    "total_samples": 400000,
+    "test_samples": 100000,
+    "training_strategy": "Multi-GPU parallel + mixed precision"
+  },
+  "models_trained": {
+    "lgb_conflict": {
+      "accuracy": 0.98501,
+      "type": "LightGBM GPU",
+      "file": "lgb_conflict_predictor.pkl"
+    },
+    "lgb_delay": {
+      "rmse": 3.5232400419174827,
+      "r2": 0.9539896739747364,
+      "type": "LightGBM GPU",
+      "file": "lgb_delay_predictor.pkl"
+    },
+    "xgb_conflict": {
+      "accuracy": 0.98515,
+      "type": "XGBoost GPU",
+      "file": "xgb_conflict_predictor.pkl"
+    },
+    "neural_network": {
+      "accuracy": 0.9850099682807922,
+      "type": "PyTorch DataParallel",
+      "file": "conflict_detector_nn.pth"
+    },
+    "catboost": {
+      "accuracy": 0.98523,
+      "type": "CatBoost GPU",
+      "file": "catboost_conflict_predictor.cbm"
+    },
+    "ensemble": {
+      "accuracy": 0.98526,
+      "type": "Weighted Average",
+      "components": [
+        "LightGBM",
+        "XGBoost",
+        "CatBoost",
+        "Neural Network"
+      ]
+    }
+  }
+}
